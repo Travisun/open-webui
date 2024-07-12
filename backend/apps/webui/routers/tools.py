@@ -72,7 +72,7 @@ async def create_new_toolkit(
     if toolkit == None:
         toolkit_path = os.path.join(TOOLS_DIR, f"{form_data.id}.py")
         try:
-            with open(toolkit_path, "w") as tool_file:
+            with open(toolkit_path, "w", encoding='utf-8') as tool_file:
                 tool_file.write(form_data.content)
 
             toolkit_module, frontmatter = load_toolkit_module_by_id(form_data.id)
